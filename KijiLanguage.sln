@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KijiLanguage", "KijiLanguage\KijiLanguage.csproj", "{3AFA6BEC-AA16-4423-906D-0587475FEBC2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3AFA6BEC-AA16-4423-906D-0587475FEBC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3AFA6BEC-AA16-4423-906D-0587475FEBC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3AFA6BEC-AA16-4423-906D-0587475FEBC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3AFA6BEC-AA16-4423-906D-0587475FEBC2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {D342CB2E-D1C4-47F3-BC50-2CB5AEF5CD2D}
+	EndGlobalSection
+EndGlobal
