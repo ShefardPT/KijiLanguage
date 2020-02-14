@@ -6,8 +6,8 @@ namespace KijiLanguage
 {
     public interface IVariableStorage
     {
-        void AddVariable(string name, string value);
-        string GetVariable(string name);
+        int GetVariable(string name);
         void RemoveVariable(string name);
+        void SetVariable(string name, int value);
     }
 }

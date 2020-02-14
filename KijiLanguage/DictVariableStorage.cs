@@ -6,24 +6,23 @@ namespace KijiLanguage
 {
     public class DictVariableStorage : IVariableStorage
     {
-        private IDictionary<string, string> _dict = new Dictionary<string, string>();
+        private IDictionary<string, int> _dict = new Dictionary<string, int>();
 
-        public void AddVariable(string name, string value)
+        public void SetVariable(string name, int value)
         {
-            try
+            if (_dict.ContainsKey(name))
+            {
+                _dict[name] = value;
+            }
+            else
             {
                 _dict.Add(name, value);
             }
-            catch (Exception e)
-            {
-                Console.WriteLine(e);
-                throw;
-            }
         }
 
-        public string GetVariable(string name)
+        public int GetVariable(string name)
         {
-            string value;
+            int value;
 
             try
             {

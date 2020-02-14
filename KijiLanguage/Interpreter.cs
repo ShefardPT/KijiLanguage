@@ -19,16 +19,20 @@ namespace KijiLanguage
 
             _commandsStorage = new Dictionary<string, Delegate>()
             {
-                { "sub", new Action<string, string>(SubtractValue) },
+                { "sub", new Action<string, int>(SubtractValue) },
                 { "print", new Action<string>(PrintVariable) },
-                { "set", new Action<string,string>(_varsStorage.AddVariable) },
+                { "set", new Action<string,int>(_varsStorage.SetVariable) },
                 { "remove", new Action<string>(_varsStorage.RemoveVariable) }
             };
         }
 
-        private void SubtractValue(string name, string value)
+        private void SubtractValue(string name, int value)
         {
-            throw new NotImplementedException();
+            var varValue = _varsStorage.GetVariable(name);
+
+            varValue -= value;
+
+            _varsStorage.SetVariable(name, varValue);
         }
 
         public void ExecuteCommand(string command)
@@ -45,11 +49,11 @@ namespace KijiLanguage
 
             var functionParameters = function.Method.GetParameters();
 
-            var parameters = new List<object>(3);
+            var parameters = new List<object>(2);
 
             for (int i = 0; i < functionParameters.Length; i++)
             {
-                parameters.Add(commandSignature[i + 1]);
+                parameters.Add(Convert.ChangeType(commandSignature[i + 1], functionParameters[i].ParameterType));
             }
 
             function.DynamicInvoke(parameters.ToArray());
